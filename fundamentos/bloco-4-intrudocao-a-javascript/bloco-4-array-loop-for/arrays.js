@@ -20,6 +20,7 @@ console.log(nomesDois);
 
 //exercicios
 
+/*
 let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
 
 let menuServices = menu[1];
@@ -37,7 +38,4 @@ let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
 menu.push('Contato');
 
 //exercicios4
-let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
-
-
-
+let menu = ['Home', 'Serviços', 'Portfólio', 'Links'];*/
