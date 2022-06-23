@@ -25,6 +25,7 @@ for(let i = 0; i < numbers.length; i += 1){
 console.log(media.toFixed(2))
 */
 
+
 // /Com o mesmo código do exercício anterior, caso o valor final seja maior que 20, imprima a mensagem: "valor maior que 20". Caso não seja, imprima a mensagem: "valor menor ou igual a 20";
 
 /*let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
@@ -42,26 +43,31 @@ if(media > 20){
 */
 // Utilizando for, descubra qual o maior valor contido no array e imprima-o;
 
-/*let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-let maior = numbers[0];
-for(let i = 1; i < numbers.length; i+= 1){
-    if(numbers[i] > maior){
-        maior = numbers[i];
-    }
-}
-console.log("O maior valor é: " + maior)
-*/
+// let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// let maior = numbers[0];
+// for(let i = 1; i < numbers.length; i+= 1){
+//     if(numbers[i] > maior){
+//         maior = numbers[i];
+//     }
+// }
+// console.log("O maior valor é: " + maior)
+
+
 // /Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
 
-/*let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
-let next=[];
-for(let i = 0; i < numbers.length; i += 1){
-    if(numbers[i] % 2 !== 0){
-        next.push(numbers[i]);
-
-    }
-}
-console.log(next)*/
+// let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// let result = 0;
+// for(let i = 0; i < numbers.length; i += 1){
+//     if(numbers[i] % 2 !== 0){
+//         result += 1;
+//     }
+// }
+// if(result === 0){
+//     console.log("Nenhum valor impar encontrado");
+// }
+// else{
+//     console.log(result);
+// }
 
 //Utilizando for, descubra qual o menor valor contido no array e imprima-o;
 /*let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
@@ -123,7 +129,7 @@ console.log(numbers);*/
 // let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 // let newArray = [];
 // for(let i = 0; i < numbers.length; i += 1){
-//     if(numbers.length > i){
+//     if(numbers.length > i + 1){
 //         newArray.push(numbers[i] * numbers[i + 1]);
 //     }
 //     else{  
@@ -132,3 +138,25 @@ console.log(numbers);*/
 // }
 
 // console.log(newArray);
+// let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
+// let newArray = [];
+// for (let i = 0; i < numbers.length; i += 1) {
+//   if (numbers[i+1]) {
+//     newArray.push(numbers[i] * numbers[i+1]);
+//   } else {
+//     newArray.push(numbers[i] * 2);
+//   }
+// };
+// console.log(newArray);
+
+
+// function dice () { 
+//     return Math.ceil(Math.random() * 6);
+// }
+// let d1 = dice();
+// let d2 = dice();
+// while (d1 === d2) {
+//     d2 = dice();
+// }
+
+// console.log(d2);
