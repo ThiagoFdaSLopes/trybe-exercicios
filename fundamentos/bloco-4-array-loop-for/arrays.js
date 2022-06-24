@@ -1,4 +1,4 @@
-let nomes = ['Thiago', 'Joao', 'Yasmin', 'Kleber'];
+// let nomes = ['Thiago', 'Joao', 'Yasmin', 'Kleber'];
 
 /*let nomesDois = nomes.indexOf('Thiago');//Para procurar o INDEX do item desejado
 
