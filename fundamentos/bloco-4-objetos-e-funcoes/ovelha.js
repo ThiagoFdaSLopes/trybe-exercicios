@@ -6,4 +6,4 @@ function OvelhaMaldita(num){
     return stringSheep;
 }
 
-console.log(OvelhaMaldita(10));
+console.log(OvelhaMaldita(10)); 
