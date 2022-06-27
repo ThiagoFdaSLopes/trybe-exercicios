@@ -74,16 +74,16 @@
 // 4 - Crie uma função que receba um array de nomes e retorne o nome com a maior quantidade de caracteres.
 // Array de teste: ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];.
 // Valor esperado no retorno da função: Fernanda.
-function maiorNomeNaArray(valor){
-    let compara = valor[0];
-    for(let i = 0; i < valor.length; i += 1){
-        if(valor[i].length > compara.length){
-            compara = valor[i];
-        }
-    }
-    return compara;
-}
-console.log(maiorNomeNaArray(['José', 'Lucas', 'ueuahuehauhea', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
+// function maiorNomeNaArray(valor){
+//     let compara = valor[0];
+//     for(let i = 0; i < valor.length; i += 1){
+//         if(valor[i].length > compara.length){
+//             compara = valor[i];
+//         }
+//     }
+//     return compara;
+// }
+// console.log(maiorNomeNaArray(['José', 'Lucas', 'ueuahuehauhea', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
 
 // 5 - Crie uma função que receba um array de inteiros e retorne o inteiro que mais se repete.
 // Array de teste: [2, 3, 2, 5, 8, 2, 3];.
@@ -100,6 +100,56 @@ console.log(maiorNomeNaArray(['José', 'Lucas', 'ueuahuehauhea', 'Nádia', 'Fern
 // }
 
 // console.log(maiorInteiro([5, 5, 2, 5, 8, 2, 3]))
+
+// function maiorNumeroNaArray(numeros){
+
+
+// }
+
+//Duas formas de resolver o exercício
+// function maisRepetido(numeros) {
+//     let contRepetido = 0;
+//     let contNumero = 0;
+//     let indexNumeroRepetido = 0;
+//     for (let index in numeros) {
+//       let verificaNumero = numeros[index];
+//       for (let index2 in numeros) {
+//         if (verificaNumero === numeros[index2]) {
+//           contNumero += 1;
+//         }
+//       }
+//       if (contNumero > contRepetido) {
+//         contRepetido = contNumero;
+//         indexNumeroRepetido = index;
+//       }
+//       contNumero = 0;
+//     }
+//     return numeros[indexNumeroRepetido];
+// }
+
+// console.log(maisRepetido([5, 5, 2, 5, 8, 2, 3]));
+// function maiorNumeroArray(numeros){
+//     let count = 0;
+//     let somaDoRepetido = 0;
+//     let indexDoRepetido = 0;
+//     for(let index in numeros){
+//         let valorRepetido = numeros[index];
+//         for(let index2 in numeros){
+//             if(valorRepetido === numeros[index2]){
+//                 count += 1;
+//             }
+//         }
+//         if(count > somaDoRepetido){
+//             somaDoRepetido = count;
+//             indexDoRepetido = index;
+//         }
+//         count = 0;
+//     }
+//     return numeros[indexDoRepetido];
+// }
+// console.log(maiorNumeroArray([5, 2, 3, 5, 3, 2, 3]));
+
+
 
 // 6 - Crie uma função que receba um número natural (número inteiro não negativo) N e retorne o somatório de todos os números de 1 até N.
 // Valor de teste: N = 5.
@@ -142,3 +192,7 @@ console.log(maiorNomeNaArray(['José', 'Lucas', 'ueuahuehauhea', 'Nádia', 'Fern
 // }
 // console.log(comparaEnding('teste', 'ste'));
 
+// function operadorEE(teste, teste2){
+//     return teste && teste2;
+// }
+// console.log(operadorEE(false, true));
