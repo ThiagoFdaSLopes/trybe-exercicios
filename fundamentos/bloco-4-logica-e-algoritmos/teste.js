@@ -34,10 +34,10 @@
 //   else{
 //     console.log(-num);
 // }
-// let array = ['java', 'javascript', 'python', 'html', 'css'];
+// let array = ['java', 'javascript', 'python', 'html', 'css', 'testedoamigothalis'];
 // let maior = array[0];
 
-// for(let i = 1; i < array.length; i += 1){
+// for(let i = 0; i < array.length; i += 1){
 //     if(array[i].length > maior.length){
 //         maior = array[i];
 //     }
@@ -61,12 +61,12 @@
 // Exercicios 2 do bonnus
 // let n = 5;
 
-// let asterisco = "";
+let asterisco = "";
 
-// for(let linha = 1; linha <= n; linha+=1 ){
-//     for(let coluna = 1; coluna <= linha; coluna+=1){
-//         asterisco += "*"
-//     }
-//     console.log(asterisco);
-//     asterisco = "";
-// }
+for(let linha = 1; linha <= n; linha+=1 ){
+    for(let coluna = 1; coluna <= linha; coluna+=1){
+        asterisco += "*"
+    }
+    console.log(asterisco);
+    asterisco = "";
+}
