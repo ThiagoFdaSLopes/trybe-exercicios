@@ -42,8 +42,6 @@ for(let i of decemberDaysList){
     tagUL.appendChild(criaALista);
   }
   criaALista.innerText = diasLista;
-
-
   }
 }
 criaDatasDias();
@@ -149,5 +147,35 @@ function novaTarefaDiv(color){
 novaTarefaDiv('green');
 
 function tarefaSelecionada(){
-  
+  let tarefasSelec = document.getElementsByClassName('task selected');
+  let minhasTarefas = document.querySelector('.task');
+
+  minhasTarefas.addEventListener('click', function(evento){
+    if(tarefasSelec.length === 0){
+      evento.target.className = 'task selected';
+    }
+    else{
+      evento.target.className = 'task';
+    }
+  })
 }
+tarefaSelecionada();
+
+function tarefasPintada(){
+  let tarefasSelec = document.getElementsByClassName('task selected');
+  let minhasTarefas = document.querySelector('#days');
+  let divTarefa = document.querySelector('.task');
+  let cor = divTarefa.style.backgroundColor;
+
+  minhasTarefas.addEventListener('click', function(evento){
+    let eventoMudaCor = evento.target.style.color;
+    if(tarefasSelec.length > 0 && eventoMudaCor !== cor){
+      let color = tarefasSelec[0].style.backgroundColor;
+      evento.target.style.color = color;
+    }else if(eventoMudaCor === cor){
+      evento.target.style.color = 'rgb(119, 119, 119)';
+    }
+
+  });
+}
+tarefasPintada();
