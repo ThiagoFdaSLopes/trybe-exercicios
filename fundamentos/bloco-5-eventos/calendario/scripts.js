@@ -179,3 +179,34 @@ function tarefasPintada(){
   });
 }
 tarefasPintada();
+
+//BONUS
+function addListaDeCompromissos(){
+let taskInput = document.querySelector('#task-input');
+let buttonIput = document.querySelector('#btn-add');
+let getTaskList = document.querySelector('.task-list');
+
+buttonIput.addEventListener('click', function(){
+    if(taskInput.value.length > 0){
+      let novaLi = document.createElement('li');
+      novaLi.innerText = taskInput.value;
+
+
+      getTaskList.appendChild(novaLi);
+      taskInput.value = '';
+    }else {
+      alert('error: Digite ao menos 1 caractere.');
+    }
+});
+
+taskInput.addEventListener('keyup', function(event){
+    if(event.key === 'Enter' && taskInput.value.length > 0){
+      let novaLi = document.createElement('li');
+      novaLi.innerText = taskInput.value;
+
+      getTaskList.appendChild(novaLi);
+      taskInput.value = '';
+    }
+});
+}
+addListaDeCompromissos();
