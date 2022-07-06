@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <h1>Formulário</h1>
+    <form action="" method="get">
+      <label for="nome-completo"
+        >Nome Completo:
+        <input
+          type="text"
+          name="nome"
+          id="nome-completo"
+          placeholder="Digite seu nome"
+          required
+        />
+      </label>
+      <br />
+      <label for="input-email"
+        >E-mail:
+        <input
+          type="email"
+          name="email"
+          id="input-email"
+          placeholder="Digite seu Email"
+          required
+        />
+      </label>
+      <br />
+      <label for="input-estado"
+        >Escolha seu Estado:
+        <select name="estados" id="input-estado">
+          <option value="sp">São Paulo</option>
+          <option value="rj" selected>Rio De Janeiro</option>
+          <option value="mg">Minas Gerais</option>
+          <option value="pr">Paraná</option>
+          <option value="ce">Ceará</option>
+        </select>
+      </label>
+      <br />
+      <p>Selecione uma Foto sua</p>
+      <input type="file" name="foto" id="input-perfil" />
+      <br />
+
+      <p>Escolha sua Comida preferida</p>
+      <label for="input-pizza">
+        <input type="radio" name="pizza" id="input-pizza" value="pizza" />Pizza
+      </label>
+      <label for="input-lasanha">
+        <input
+          type="radio"
+          name="lasanha"
+          id="input-lasanha"
+          value="lasanha"
+        />Lasanha
+      </label>
+      <label for="input-lanche">
+        <input
+          type="radio"
+          name="lanche"
+          id="input-lanche"
+          value="lanche"
+        />Lanche
+      </label>
+      <label for="input-panetone">
+        <input
+          type="radio"
+          name="panetone"
+          id="input-panetone"
+          value="panetone"
+        />Panetone
+      </label>
+      <label for="input-refrigerante">
+        <input
+          type="radio"
+          name="refri"
+          id="input-refrigerante"
+          value="refrigerante"
+        />Refrigerante
+      </label>
+      <br />
+      <p>Escreve um pouco sobre você</p>
+      <textarea
+        name="sobre"
+        id="sobremim"
+        cols="30"
+        rows="10"
+        placeholder="Digite algo sobre você aqui"
+      ></textarea>
+      <br />
+      <p>Digite sua senha:</p>
+      <label for="input-senha">
+        <input
+          type="password"
+          name="senha"
+          id="input-senha"
+          placeholder="Digite sua Senha"
+          required
+        />
+      </label>
+      <br />
+      <label for="checkbox-info">
+        <input type="checkbox" name="info" id="checkbox-info" />Deseja receber
+        informações?
+      </label>
+      <br />
+       <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
