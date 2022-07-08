@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BootStrap</title>
+    <link rel="stylesheet" href="bootstrap-5.2.0-beta1-dist/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap-5.2.0-beta1-dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
 </head>
 <body>
-    
+    <main id="local-login">
+        <div class="form-group">
+            <form action="" method="get">
+                <p>Usuário/E-mail:</p>
+                <input type="email" name="email" placeholder="digite seu e-mail" class="form-control" autofocus id="input-email" autocomplete="off" required>
+                <p>Senha:</p>
+                <input type="password" name="password" placeholder="digite a sua senha"  class="form-control" id="input-password" required>
+                <label> 
+                    <input type="checkbox" name="rememberme" id="input-rememberme" class="">Lembrar-me
+                </label>
+                <button type="submit" name="entrar" id="button-submit" class="btn btn-success">Entrar</button>
+            </form>
+        </div>
+    </main>
 </body>
 </html>
