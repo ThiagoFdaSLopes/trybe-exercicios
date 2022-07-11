@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hotel Trybe</title>
+  </head>
+
+  <body>
+    <!-- Seu código aqui -->
+    <header class="header-trybe">
+      <h1>Hotel</h1>
+      <img src="Trybe-200x200.jpeg" alt="logo">
+    </header>
+    <form action="" method="get">
+    <section class="hotel-form">
+        <input type="date" class="inputCheckin" name="checkin" id="input-checkin">
+        <input type="date" class="inputCheckout" name="checkout" id="input-checkout">
+    </section>
+    <section class="hotel-form">
+
+        <input type="radio" class="bedroom" name="quarto" id="input-comum" value="comum">
+        <label for="input-comum">Comum</label>
+        <input type="radio" class="bedroom" name="quarto" id="input-club" value="club">
+        <label for="input-club" >Club</label>
+        <input type="radio" class="bedroom" name="quarto" id="input-luxo" value="luxo">
+        <label for="input-luxo">Luxo</label>
+      </section>
+        <section class="hotel-form">
+          <select name="npessoas" id="" class="nPessoas">
+            <option value="um">1</option>
+            <option value="dois">2</option>
+            <option value="tres">3</option>
+            <option value="quatro">4</option>
+          </select>
+        </section>
+        <section class="hotel-form">
+          <textarea name="" class="obs" id="" cols="30" rows="10" placeholder="Digite Observações"></textarea>
+          <br>
+          <button type="submit" id="submit-btn">Enviar</button>
+        </section>
+        <section class="list-section">
+          <h1>Lista de Reserva</h1>
+          <ol></ol>
+          <button type="reset" id="clear-btn">Limpar</button>
+        </section>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>

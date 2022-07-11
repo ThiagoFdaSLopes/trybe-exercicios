@@ -1,0 +1,35 @@
+.main-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 400px;
+    background-color: red;
+}
+
+.caixa-azul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100px;
+    background-color: rgb(83, 103, 255);
+}
+
+.caixa-amarela {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100px;
+    background-color: rgb(229, 255, 0);
+}
+
+.caixa-verde {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100px;
+    background-color: rgb(0, 255, 30);
+}

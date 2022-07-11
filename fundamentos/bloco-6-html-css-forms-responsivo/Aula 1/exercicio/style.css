@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: gray;
+}
+
+.cabecalho {
+    margin: 40px auto;
+    padding: 50px;
+    width: 30%;
+    border-radius: 10px;
+    background-color: rgb(245, 203, 50);
+}
+.cabecalho h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.cabecalho h4{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.forms-container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    background-color: azure;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgb(245, 203, 50);
+}
+
+.forms input[type='text'], input[type='email']{
+    border: none;
+    margin: 10px;
+    width: 50%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#escolha-destino {
+    border: none;
+    margin: 10px;
+    width: 10%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.text-area {
+    border: none;
+    margin: 10px;
+    width: 50%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.melhor-dia {
+    border: none;
+    margin: 10px;
+    width: 10%;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.enviar {
+    border: none;
+    margin: 10px;
+    background-color: rgb(89, 229, 89);
+    width: 10%;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.apagar {
+    color: white;
+    border: none;
+    margin: 10px;
+    background-color: rgb(255, 0, 0);
+    width: 10%;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.apagar:hover {
+    background-color: rgb(255, 78, 78);
+}
+.enviar:hover {
+    background-color: rgb(114, 233, 114);
+}
+/* .checked {
+    border: none;
+    margin: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+} */
+/* .forms {
+    width: auto;
+    padding: auto;
+    border: 1px solid black;
+} */
