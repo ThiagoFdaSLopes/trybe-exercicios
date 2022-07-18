@@ -1,7 +1,7 @@
 const trativa = (valueDois, valueTres) => {
-    if (!valueDois || !valueTres ) {
-        throw new Error('Erro: Insira um valor numérico');
-    }
+    // if (!valueDois || !valueTres ) {
+    //     throw new Error('Erro: Insira um valor numérico');
+    // }
     if(isNaN(valueDois) || isNaN(valueTres)) {
         throw new Error('Error: Insira valores nas 2 caixas')
     }
