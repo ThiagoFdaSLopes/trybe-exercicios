@@ -19,14 +19,14 @@ const allLessons =
       turno: 'noite'
     },
     lesson4: {
-        materia: 'História',
-        numeroEstudantes: 10,
+        materia: 'Inglês',
+        numeroEstudantes: 15,
         professor: 'Maria Clara',
         turno: 'noite'
     },
     lesson5: {
-        materia: 'História',
-        numeroEstudantes: 10,
+        materia: 'Ciências',
+        numeroEstudantes: 35,
         professor: 'Maria Clara',
         turno: 'noite'
     }
