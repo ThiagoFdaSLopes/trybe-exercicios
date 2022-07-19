@@ -24,14 +24,38 @@
 // module.exports = myRemove;
 
 // Exercicio 3
-function myFizzBuzz(num) {
-    if (typeof num !== 'number') return false;
-    if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
-    if (num % 3 === 0) return 'fizz';
-    if (num % 5 === 0) return 'buzz';
-    return num;
+// function myFizzBuzz(num) {
+//     if (typeof num !== 'number') return false;
+//     if (num % 3 === 0 && num % 5 === 0) return 'fizzbuzz';
+//     if (num % 3 === 0) return 'fizz';
+//     if (num % 5 === 0) return 'buzz';
+//     return num;
+// }
+
+// console.log(myFizzBuzz(2));
+
+// module.exports = myFizzBuzz;
+
+// Exercicio 4
+
+
+const encode = (string) => {
+    if(!string || typeof string !== 'string') return false;
+    let newString = string;
+    for(let i = 0; i < newString.length; i += 1){
+        newString = newString.replace('a', 1).replace('e', 2).replace('i', 3).replace('o', 4).replace('u', 5);
+    }
+    return newString
+}
+const decode = (string) => {
+    let newString = string;
+    for(let i = 0; i < newString.length; i += 1){
+        newString = newString.replace(1, 'a').replace(2, 'e').replace(3, 'i').replace(4, 'o').replace(5, 'u');
+    }
+    return newString
 }
 
-console.log(myFizzBuzz(2));
-
-module.exports = myFizzBuzz;
+module.exports = {
+    encode,
+    decode,
+}
