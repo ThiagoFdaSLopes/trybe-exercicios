@@ -32,4 +32,6 @@ function myFizzBuzz(num) {
     return num;
 }
 
+console.log(myFizzBuzz(2));
+
 module.exports = myFizzBuzz;
