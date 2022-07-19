@@ -39,23 +39,55 @@
 // Exercicio 4
 
 
-const encode = (string) => {
-    if(!string || typeof string !== 'string') return false;
-    let newString = string;
-    for(let i = 0; i < newString.length; i += 1){
-        newString = newString.replace('a', 1).replace('e', 2).replace('i', 3).replace('o', 4).replace('u', 5);
+// const encode = (string) => {
+//     if(!string || typeof string !== 'string') return false;
+//     let newString = string;
+//     for(let i = 0; i < newString.length; i += 1){
+//         newString = newString.replace('a', 1).replace('e', 2).replace('i', 3).replace('o', 4).replace('u', 5);
+//     }
+//     return newString
+// }
+// const decode = (string) => {
+//     let newString = string;
+//     for(let i = 0; i < newString.length; i += 1){
+//         newString = newString.replace(1, 'a').replace(2, 'e').replace(3, 'i').replace(4, 'o').replace(5, 'u');
+//     }
+//     return newString
+// }
+
+// module.exports = {
+//     encode,
+//     decode,
+// }
+
+// // Exercicio 5 
+// function techList(array, nome) {
+//     let arrayNova = [];
+//     array = array.sort();
+
+//     for (let i in array) {
+//         arrayNova.push({ tech: array[i], name: nome });
+//     }
+//     if (array.length === 0) {
+//         return 'Vazio!'
+//     }
+//     return arrayNova;
+// }
+// module.exports = techList;
+
+function hydrate(string) {
+    let valor = string.match(/\d+/g).map(Number);
+    let novaString = 0;
+    for (let i = 0; i < valor.length; i += 1) {
+        novaString += valor[i];
     }
-    return newString
-}
-const decode = (string) => {
-    let newString = string;
-    for(let i = 0; i < newString.length; i += 1){
-        newString = newString.replace(1, 'a').replace(2, 'e').replace(3, 'i').replace(4, 'o').replace(5, 'u');
+
+    if (novaString === 1) {
+        return novaString + ' copo de água';
     }
-    return newString
+    if (novaString > 1) {
+        return novaString + ' copos de água';
+    }
 }
 
-module.exports = {
-    encode,
-    decode,
-}
+module.exports = hydrate;
