@@ -75,19 +75,82 @@
 // }
 // module.exports = techList;
 
-function hydrate(string) {
-    let valor = string.match(/\d+/g).map(Number);
-    let novaString = 0;
-    for (let i = 0; i < valor.length; i += 1) {
-        novaString += valor[i];
-    }
+// function hydrate(string) {
+//     let valor = string.match(/\d+/g).map(Number);
+//     let novaString = 0;
+//     for (let i = 0; i < valor.length; i += 1) {
+//         novaString += valor[i];
+//     }
 
-    if (novaString === 1) {
-        return novaString + ' copo de água';
-    }
-    if (novaString > 1) {
-        return novaString + ' copos de água';
-    }
-}
+//     if (novaString === 1) {
+//         return novaString + ' copo de água';
+//     }
+//     if (novaString > 1) {
+//         return novaString + ' copos de água';
+//     }
+// }
 
-module.exports = hydrate;
+// module.exports = hydrate;
+
+// Dados
+const professionalBoard = [
+    {
+        id: '8579-6',
+        firstName: 'Ana',
+        lastName: 'Gates',
+        specialities: ['UX', 'Design'],
+    },
+    {
+        id: '5569-4',
+        firstName: 'George',
+        lastName: 'Jobs',
+        specialities: ['Frontend', 'Redux', 'React', 'CSS'],
+    },
+    {
+        id: '4456-4',
+        firstName: 'Leila',
+        lastName: 'Zuckerberg',
+        specialities: ['Context API', 'RTL', 'Bootstrap'],
+    },
+    {
+        id: '1256-4',
+        firstName: 'Linda',
+        lastName: 'Bezos',
+        specialities: ['Hooks', 'Context API', 'Tailwind CSS'],
+    },
+    {
+        id: '9852-2-2',
+        firstName: 'Jeff',
+        lastName: 'Cook',
+        specialities: ['Ruby', 'SQL'],
+    },
+    {
+        id: '4678-2',
+        firstName: 'Paul',
+        lastName: 'Dodds',
+        specialities: ['Backend'],
+    },
+];
+
+// Pesquisa
+const searchEmployee = (id, detail) => {
+    if (!id || typeof id !== 'string') return 'ID não identificada';
+    if (!detail || typeof detail !== 'string') return 'Informação não identificada';
+
+    let employe = '';
+    for(let i in professionalBoard){
+        const currentEmployee = professionalBoard[i];
+        console.log(currentEmployee)
+        if(currentEmployee.id === id){
+            employe = currentEmployee;
+            console.log(employe)
+        }
+    }
+    return employe[detail];
+    
+};
+
+
+
+console.log(searchEmployee('9852-2-2', 'lastName'));
+module.exports = searchEmployee;

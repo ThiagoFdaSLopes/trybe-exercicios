@@ -17,3 +17,10 @@
 
 
 // console.log(oddsAndEvens.sort(ordem)); // será necessário alterar essa linha 😉
+
+const obj = {
+    nome: 'Thiago',
+    sobrenome: 'Lopes',
+}
+
+console.log(typeof obj.nome)
