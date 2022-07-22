@@ -76,7 +76,7 @@
 const mage = {
     healthPoints: 130,
     intelligence: 45,
-    mana: 125,
+    mana: 14,
     damage: undefined,
 };
 
@@ -118,11 +118,12 @@ const returnObj = (mago) => {
 
     const danoMin = mago.intelligence;
     const danoMax = danoMin * 2;
-    
+
     const obj = {
         dano: () => {
             const dano = Math.floor(Math.random() * (danoMax - danoMin + 1)) + danoMin;
             if( mago.mana < 15) {
+                // dano = 0;
                 return "Não possui mana suficiente";
             }
             return dano;       
