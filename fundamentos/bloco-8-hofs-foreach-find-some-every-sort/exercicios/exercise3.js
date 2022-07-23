@@ -63,10 +63,6 @@ const books = [
 
   // Adicione o código do exercício aqui:
 
-const getNamedBook = (array) => {
-    let table = array[0].name
-    const book =  array.find((element) => element.name.length >= table.length);
-    return book;
-}
+const getNamedBook = (array, number) => array.find((element) => element.name.length >= number);
 
-console.log(getNamedBook(books))
+console.log(getNamedBook(books, 26))
