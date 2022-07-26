@@ -63,6 +63,6 @@ const books = [
 
   // Adicione o código do exercício aqui:
 
-const frase = books.reduce((frase, palavra) => frase = `${frase} ${palavra.author.name},`, '');
+const frase = books.reduce((frase, palavra) => `${frase} ${palavra.author.name},`, '');
 
 console.log(frase)
