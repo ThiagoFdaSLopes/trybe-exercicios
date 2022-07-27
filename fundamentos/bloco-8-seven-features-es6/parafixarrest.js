@@ -11,4 +11,4 @@ const criandoFilter = (...args) => {
     return retorno;
 }
 
-console.log(criandoFilter({nome: 'Thiago', idade: 62}, {nome: 'Thay', idade: 65}, {nome: 'Pedro', idade: 33}));
+console.log(criandoFilter([61, 63, 64], {nome: 'Thay', idade: 65}, {nome: 'Pedro', idade: 13}));
