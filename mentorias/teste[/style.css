@@ -1,0 +1,23 @@
+.corAzul {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 50%;
+    height: 500px;
+    background-color: aqua;
+}
+
+.corVermelha {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50%;
+    height: 250px;
+    background-color: brown;
+}
+
+.CorRosa {
+    background-color: rgb(174, 0, 255);
+    width: 50%;
+    height: 50px;
+}
