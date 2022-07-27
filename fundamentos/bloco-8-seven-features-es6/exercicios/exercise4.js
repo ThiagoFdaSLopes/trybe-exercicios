@@ -37,7 +37,7 @@ const people = [
 // - retorna todas as pessoas australianas que nasceram no século 20
 
 const filterPeople = (people) => {
-   return people.filter(({name, bornIn, nationality}) => (nationality === 'Australian' && bornIn > 1900 && bornIn < 2000)).map((element) => element)
+   return people.filter(({bornIn, nationality}) => (nationality === 'Australian' && bornIn > 1900 && bornIn < 2000))
 }
 
 console.log(filterPeople(people))
