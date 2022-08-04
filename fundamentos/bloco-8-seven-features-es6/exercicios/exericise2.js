@@ -3,8 +3,8 @@
 Dica: use parâmetro rest.
 */
 
-const sum = (...args) => {
-    return args.reduce((acc, curr)=> acc + curr)
+const sum = (...numbers) => {
+    return numbers.reduce((acc, curr)=> acc + curr)
 }
 
 console.log(sum(1,2,3))
