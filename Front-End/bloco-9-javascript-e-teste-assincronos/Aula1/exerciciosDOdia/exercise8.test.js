@@ -3,7 +3,7 @@
 // Crie um novo arquivo .test.js ou .spec.js e copie o código abaixo. 
 // Complete os testes para a função getPokemonDetails de acordo com as especificações.
 // Verifique se a importação do arquivo correto está sendo feita.
-const { getPokemonDetails } = require("./get-pokemon-details");
+const { getPokemonDetails } = require("./exercise8");
 
 describe("A função getPokemonDetails", () => {
   it("retorna erro quando procuramos um pokemon que não existe no banco de dados", (done) => {

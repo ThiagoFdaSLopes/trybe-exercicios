@@ -39,6 +39,7 @@ function getPokemonDetails(filter, callback) {
     }, 2000);
 }
 
+// getPokemonDetails();
 getPokemonDetails(
     (pokemon) => pokemon.name === 'thiago',
     (error, message) => {
