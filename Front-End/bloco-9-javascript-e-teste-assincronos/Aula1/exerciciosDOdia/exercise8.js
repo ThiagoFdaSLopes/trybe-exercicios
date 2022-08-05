@@ -40,7 +40,7 @@ function getPokemonDetails(filter, callback) {
 }
 
 getPokemonDetails(
-    (pokemon) => pokemon.name === 'Bulbasaur',
+    (pokemon) => pokemon.name === 'thiago',
     (error, message) => {
         if(error) {
             console.log(error)
