@@ -1,9 +1,10 @@
-// import logo from './logo.svg';
-import './App.css';
-import HelloWorld from './HelloWorld';
+import React from 'react';
+import Componente from './about';
 
-function App() {
-  return <HelloWorld />
+class App extends React.Component {
+  render() {
+    return <Componente />;
+  }
 }
 
 export default App;
