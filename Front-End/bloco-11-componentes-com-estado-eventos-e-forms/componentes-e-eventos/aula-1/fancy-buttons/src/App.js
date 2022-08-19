@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 
-const handleClick = () => console.log('Ola');
-const click = () => console.log('Thiago');
-const clickDuplo = () => console.log('Lopes');
-
 class App extends Component {
+  state = {
+    numeroCliques: 0,
+  }
+
+  handleClick = () => {
+    this.setState((antes, _props) => ({
+      numeroCliques: antes.numeroCliques + 1
+    }));
+  }
   render() {
+    const { numeroCliques } = this.state;
     return (
       <div>
-        <button onClick={handleClick}>BOTAO</button>
-        <button onClick={click}>BOTAO1</button>
-        <button onClick={clickDuplo}>BOTAO2</button>
+        <button onClick={this.handleClick}>{numeroCliques}</button>
       </div>
     );
   }
