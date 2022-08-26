@@ -4,7 +4,10 @@ class Forms extends Component {
     constructor(){
         super()
 
-        this.state = {}
+        this.state = {
+            name: '',
+            suco: '',
+        }
 
         this.handleChange = this.handleChange.bind(this)
     }
@@ -12,13 +15,17 @@ class Forms extends Component {
     handleChange = ({ target }) => {
         const { name } = target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
+
+        let valornovo = value;
+
+        if(name === 'nome') valornovo = value.toUpperCase();
         this.setState(() => ({
-            [name]: value,
+            [name]: valornovo,
         }))
-        console.log(this.state.value);
     }
 
     render() {
+        const { name, suco } = this.state;
         return (
           <form>
             <label>
@@ -26,12 +33,13 @@ class Forms extends Component {
               <input
                 type="text"
                 name="name"
+                value={ name }
                 onChange={this.handleChange}
               />
             </label>
             <label>
-              Quais comidas você gosta?
-              <select name="suco" onChange={this.handleChange}>
+              Quais bebidas você gosta?
+              <select name="suco" value={ suco } onChange={this.handleChange}>
                 <option value="grapefruit">Grapefruit</option>
                 <option value="lime">Lime</option>
                 <option value="coconut">Coconut</option>
