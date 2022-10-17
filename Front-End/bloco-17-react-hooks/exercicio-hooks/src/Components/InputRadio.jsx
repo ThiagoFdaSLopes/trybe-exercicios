@@ -1,10 +1,9 @@
-function inputRadio({ children, id, name, value, onChange}){
+function inputRadio({ children, id, value, onChange}){
   return(
     <label htmlFor={ id }>
       {children}
       <input
         type="radio"
-        name={ name }
         value={ value }
         onChange={ onChange }
       />

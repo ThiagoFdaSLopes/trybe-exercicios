@@ -1,77 +1,93 @@
 import InputText from "../Components/InputText";
 import InputNumber from "../Components/InputNumber";
 import InputRadio from '../Components/InputRadio';
-import { useState } from "react";
+import { useState, useContext } from "react";
+import FormContext from "../Context/FormContext";
 
 function Form(){
-  const [state, setState] = useState({ nome: '', idade: '', cidade: '', modulo: ''});
-  
-  const handleChange = ({ target: { name, value }}) => {
-    setState((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }))
+  const [inputName, setInputName] = useState('');
+  const [inputCidade, setInputCidade] = useState('');
+  const [inputIdade, setInputIdade] = useState('');
+  const [inputRadio, setInputRadio] = useState('');
+
+  // pegando valores do contexto
+  const value = useContext(FormContext)
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    value.addNewUser({ inputName, inputCidade, inputIdade, inputRadio})
+
+    setInputCidade('');
+    setInputIdade('');
+    setInputName('');
+    setInputRadio('');
   }
-  // descontruindo estado
-  const { nome, idade, cidade } = state;
   return (
     <>
     <h1>FORM</h1>
+    <form onSubmit={ handleSubmit }>
     <InputText
-     name="nome"
-     value={ nome }
-     onChange={ handleChange }
+     id='nome-input'
+     value={ inputName }
+     onChange={ (e) => setInputName(e.target.value) }
     >
       Nome Completo
     </InputText>
     <InputNumber
       id='idade-input'
-      name="idade"
-      value={ idade }
-      onChange={ handleChange }
+      value={ inputIdade }
+      onChange={ (e) => setInputIdade(e.target.value) }
     >
       Idade
     </InputNumber>
     <InputText
      id='cidade-input'
-     name="cidade"
-     value={ cidade }
-     onChange={ handleChange }
+     value={ inputCidade }
+     onChange={ (e) => setInputCidade(e.target.value) }
     >
       Cidade
     </InputText>
     <InputRadio
-      name="modulo"
       id='fundamentos-input'
       value="Fundamentos"
-      onChange={ handleChange }
+      onChange={ (e) => setInputRadio(e.target.value) }
     >
       Fundamentos
     </InputRadio>
     <InputRadio
-      name="modulo"
       id='frontend-input'
       value="Front-End"
-      onChange={ handleChange }
+      onChange={ (e) => setInputRadio(e.target.value) }
     >
       Front-End
     </InputRadio>
     <InputRadio
-      name="modulo"
       id='backend-input'
       value="Back-End"
-      onChange={ handleChange }
+      onChange={ (e) => setInputRadio(e.target.value) }
     >
       Back-End
     </InputRadio>
     <InputRadio
-      name="modulo"
       id='ciencia-input'
       value="Ciência da Computação"
-      onChange={ handleChange }
+      onChange={ (e) => setInputRadio(e.target.value) }
     >
       Ciencia da Computação
     </InputRadio>
+    <button type='submit'>Salvar</button>
+    </form>
+    <div>
+      {
+        value.newUser.map((e, index) => <ul key={ index }>
+          <li>{e.inputName}</li>
+          <li>{e.inputCidade}</li>
+          <li>{e.inputRadio}</li>
+          <li>{e.inputIdade}</li>
+        </ul>)
+      }
+    </div>
     </>
   )
 } 
