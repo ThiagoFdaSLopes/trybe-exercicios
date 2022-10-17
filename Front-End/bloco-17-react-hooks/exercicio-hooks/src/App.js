@@ -1,7 +1,9 @@
+import Form from "./Pages/Form";
+
 function App() {
   return (  
     <>
-    <h1>FORM'S</h1>
+    <Form />
     </>
   );
 }
