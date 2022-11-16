@@ -1,0 +1,1 @@
+// Iniciando dia do banco de dados
