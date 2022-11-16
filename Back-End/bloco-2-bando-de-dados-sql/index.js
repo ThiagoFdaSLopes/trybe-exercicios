@@ -12,3 +12,5 @@
 // -d: Utilizada para fazer com que o nosso container rode em segundo plano;
 
 // -p: Indicaremos qual porta no nosso sistema operacional o docker estará em funcionamento. Perceba que passamos 3306:3306. A porta 3306 (lado esquerdo) significa que a porta 3306 do nosso computador receberá o container docker. A porta 3306 (lado direito) significa que a porta que teremos acesso dentro do container. Lembrando que 3306 é a porta padrão do MySQL.
+
+// para parar o container: docker container stop container-mysql
