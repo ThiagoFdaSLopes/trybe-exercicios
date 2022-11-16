@@ -14,3 +14,11 @@
 // -p: Indicaremos qual porta no nosso sistema operacional o docker estará em funcionamento. Perceba que passamos 3306:3306. A porta 3306 (lado esquerdo) significa que a porta 3306 do nosso computador receberá o container docker. A porta 3306 (lado direito) significa que a porta que teremos acesso dentro do container. Lembrando que 3306 é a porta padrão do MySQL.
 
 // para parar o container: docker container stop container-mysql
+
+// Iniciando ou removendo container
+
+// docker container start container-mysql
+// ## Deletando seu container
+// Se agora você não quer mais usar esse container e quer removê-lo, pare o container e execute o comando abaixo:
+// ## quando o container estiver parado
+// docker container rm container-mysql
