@@ -1,1 +1,16 @@
 // Iniciando o dia
+
+
+// OPERADORES
+
+  // = IGUAL
+  // <> DIFERENTE DE
+  // > MAIOR QUE 
+  // < MENOR QUE
+  // >= MAIOR QUE OU IGUAL A
+  // <= MENOR QUE OU IGUAL A
+  // AND OPERADOR LOGICO E
+  // OR OPERADOR LOGICO OU
+  // IS COMPARA COM VALORES BOOLEANOS (TRUE, FALSE, NULL)
+  // NOT NEGAÇÃO
+// -- 
