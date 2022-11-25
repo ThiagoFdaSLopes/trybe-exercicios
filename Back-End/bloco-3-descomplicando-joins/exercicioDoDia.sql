@@ -31,3 +31,12 @@ FROM theater AS t
 LEFT JOIN movies AS m
 ON m.theater_id = t.id
 ORDER BY t.name DESC;
+
+-- Utilizando o RIGHT JOIN, faça uma busca que retorne todos os dados dos filmes, mesmo os que não estão em cartaz e, adicionalmente, 
+-- os dados dos cinemas que possuem estes filmes em cartaz. Retorne os nomes dos cinemas em ordem alfabética.
+
+SELECT m.title, m.director, m.year, m.length_minutes, t.id, t.name, t.location
+FROM movies AS m
+LEFT JOIN theater AS t
+ON m.theater_id = t.id
+ORDER BY t.name DESC;
