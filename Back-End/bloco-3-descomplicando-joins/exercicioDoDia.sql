@@ -22,3 +22,12 @@ FROM box_office AS box
 INNER JOIN movies AS m
 ON box.movie_id = m.id
 ORDER BY box.rating DESC;
+
+-- Exercício 4: Utilizando o LEFT JOIN, faça uma busca que retorne todos os dados dos cinemas, mesmo os que não possuem filmes em cartaz e, 
+-- adicionalmente, os dados dos filmes que estão em cartaz nestes cinemas. Retorne os nomes dos cinemas em ordem alfabética.
+
+SELECT t.id, t.name, t.location, m.title, m.director, m.year, m.length_minutes
+FROM theater AS t
+LEFT JOIN movies AS m
+ON m.theater_id = t.id
+ORDER BY t.name DESC;
