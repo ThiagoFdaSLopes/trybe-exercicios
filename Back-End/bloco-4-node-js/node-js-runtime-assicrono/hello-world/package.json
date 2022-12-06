@@ -1,0 +1,15 @@
+{
+  "name": "hello-world",
+  "version": "0.0.1",
+  "description": "Modulo Hello World",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Thiago Lopes",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
