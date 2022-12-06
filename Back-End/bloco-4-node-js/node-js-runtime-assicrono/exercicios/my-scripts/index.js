@@ -1,13 +1,16 @@
 const fs = require('fs').promises;
 
-async function readSimpsons() {
+async function searchSimpson(id) {
   const data = await fs.readFile('./simpsons.json');
   const result = JSON.parse(data);
 
-  for(let i = 0; i < result.length; i ++) {
-    console.log(`${result[i].id} - ${result[i].name}`);
+  const simpson = result.find((e) => e.id === id);
+  
+  if(!simpson){
+    console.log('Simpson não encontrado')
   }
+
+  console.log(simpson.name);
 }
 
-readSimpsons();
-
+searchSimpson('1');
