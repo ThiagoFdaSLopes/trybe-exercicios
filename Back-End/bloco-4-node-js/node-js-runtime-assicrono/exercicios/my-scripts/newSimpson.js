@@ -5,5 +5,7 @@ async function newsSimpson() {
   const novos = JSON.stringify(result.filter((e) => e.id <= '4'));
   
 
-  fs.appendFile('./simpsonFamily.json', novos);
+  fs.writeFile('./simpsonFamily.json', novos);
 }
+
+newsSimpson();
