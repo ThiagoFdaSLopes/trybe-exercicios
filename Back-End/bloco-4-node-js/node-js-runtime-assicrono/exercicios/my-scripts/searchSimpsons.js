@@ -1,5 +1,3 @@
-const fs = require('fs').promises;
-
 async function searchSimpson(id) {
   const data = await fs.readFile('./simpsons.json');
   const result = JSON.parse(data);
