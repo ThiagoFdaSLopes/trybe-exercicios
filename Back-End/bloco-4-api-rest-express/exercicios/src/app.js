@@ -26,7 +26,7 @@ app.post('/movies', (req, res) => {
 
   json.push({ id: (json.length + 1), movie, price });
 
-  res.status(200).end();
+  res.status(200).json({ message: 'Filme Adicionado' });
 });
 
 app.put('/movies/:id', (req, res) => {
@@ -42,7 +42,20 @@ app.put('/movies/:id', (req, res) => {
   film.movie = movie;
   film.price = price;
 
-  res.status(200).end();
+  res.status(200).json({ message: 'Filme Editado' });
+});
+
+app.delete('/movies/:id', (req, res) => {
+  const { id } = req.params;
+
+  const film = json.findIndex((e) => e.id === Number(id));
+  json.splice(film, 1);
+
+  if (!film) {
+    res.status(400).json({ error: 'ID não encontrado' });
+  }
+
+  res.status(200).json({ message: 'Filme Deletado' });
 });
 
 module.exports = app;
