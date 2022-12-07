@@ -29,4 +29,20 @@ app.post('/movies', (req, res) => {
   res.status(200).end();
 });
 
+app.put('/movies/:id', (req, res) => {
+  const { id } = req.params;
+  const { movie, price } = req.body;
+
+  const film = json.find((e) => e.id === Number(id));
+
+  if (!film) {
+    res.status(400).json({ error: 'ID não encontrado' });
+  }
+
+  film.movie = movie;
+  film.price = price;
+
+  res.status(200).end();
+});
+
 module.exports = app;
