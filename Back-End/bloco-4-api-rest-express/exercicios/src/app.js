@@ -7,7 +7,7 @@ const json = readFileJson();
 
 app.use(express.json());
 
-app.get('/', (req, res) => res.status(200).json({ json }));
+app.get('/movies', (req, res) => res.status(200).json({ json }));
 
 app.get('/movies/:id', (req, res) => {
   const { id } = req.params;
@@ -19,6 +19,14 @@ app.get('/movies/:id', (req, res) => {
   }
 
   res.status(200).json({ movie });
-  });
+});
+
+app.post('/movies', (req, res) => {
+  const { movie, price } = req.body;
+
+  json.push({ id: (json.length + 1), movie, price });
+
+  res.status(200).end();
+});
 
 module.exports = app;
