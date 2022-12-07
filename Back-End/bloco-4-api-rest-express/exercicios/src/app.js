@@ -9,17 +9,17 @@ app.use(express.json());
 
 app.get('/movies', (req, res) => res.status(200).json({ json }));
 
-app.get('/movies/:id', (req, res) => {
-  const { id } = req.params;
+// app.get('/movies/:id', (req, res) => {
+//   const { id } = req.params;
 
-  const movie = json.find((e) => e.id === Number(id));
+//   const movie = json.find((e) => e.id === Number(id));
 
-  if (!movie) {
-    res.status(400).json({ error: 'ID não encontrado' });
-  }
+//   if (!movie) {
+//     res.status(400).json({ error: 'ID não encontrado' });
+//   }
 
-  res.status(200).json({ movie });
-});
+//   res.status(200).json({ movie });
+// });
 
 app.post('/movies', (req, res) => {
   const { movie, price } = req.body;
@@ -56,6 +56,14 @@ app.delete('/movies/:id', (req, res) => {
   }
 
   res.status(200).json({ message: 'Filme Deletado' });
+});
+
+app.get('/movies/search', (req, res) => {
+  const { q } = req.query;
+
+  const movies = json.filter((e) => e.movie.includes(q));
+
+  res.status(200).json({ movies });
 });
 
 module.exports = app;
