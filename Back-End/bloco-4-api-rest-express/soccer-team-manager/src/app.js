@@ -19,6 +19,18 @@ const teams = [
 
 app.get('/teams', (req, res) => res.status(200).json({ teams }));
 
+app.get('/teams/:id', (req, res) => {
+  const { id } = req.params;
+
+  const team = teams.find((e) => e.id === Number(id));
+
+  if (!team) {
+    res.status(404).json({ message: 'Team not found' });
+  }
+
+  res.status(200).json({ team });
+});
+
 app.post('/teams', (req, res) => {
   const newTeam = { ...req.body };
   teams.push(newTeam);
