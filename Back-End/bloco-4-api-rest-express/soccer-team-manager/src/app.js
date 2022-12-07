@@ -8,7 +8,7 @@ const teams = [
   {
     id: 1,
     name: 'São Paulo Futebol Clube',
-    initials: 'SPF',
+    initials: 'SPFC',
   },
   {
     id: 2,
