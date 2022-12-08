@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "mocha cacau-trybe/src/tests/**/*.test.js --exit",
+    "test": "mocha cacau-trybe/tests/integration/* --exit",
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
   },
   "keywords": [],
