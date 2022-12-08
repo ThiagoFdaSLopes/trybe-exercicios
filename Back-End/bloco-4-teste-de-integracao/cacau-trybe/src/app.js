@@ -18,16 +18,25 @@ app.get('/chocolates', async (req, res) => {
 //   res.status(200).json({ chocolate });
 // });
 
-app.get('/chocolates/brand/:brandId', async (req, res) => {
-  const { brandId } = req.params;
-  const chocolates = await cacauTrybe.getChocolatesByBrand(Number(brandId));
-  res.status(200).json({ chocolates });
-});
+// app.get('/chocolates/brand/:brandId', async (req, res) => {
+//   const { brandId } = req.params;
+//   const chocolates = await cacauTrybe.getChocolatesByBrand(Number(brandId));
+//   res.status(200).json({ chocolates });
+// });
 
-app.get('/chocolates/total', async (_req, res) => {
-  const total = await cacauTrybe.calculateTotal();
+// app.get('/chocolates/total', async (_req, res) => {
+//   const total = await cacauTrybe.calculateTotal();
 
-  res.status(200).json({ totalChocolates: total });
+//   res.status(200).json({ totalChocolates: total });
+// });
+
+app.get('/chocolates/search', async (req, res) => {
+  const { name } = req.query;
+  const array = await cacauTrybe.searchChocolate(name);
+
+  if (!array.length) return res.status(404).json({ array });
+
+  res.status(200).json({ array });
 });
 
 module.exports = app;

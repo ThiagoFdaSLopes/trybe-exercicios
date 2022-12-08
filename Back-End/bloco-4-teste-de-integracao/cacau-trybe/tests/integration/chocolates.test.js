@@ -127,15 +127,41 @@ const { expect } = chai;
 //   });
 // });
 
-describe('Contando a quantidade de chocolates', function () { 
-  const mockresponse = {
-    totalChocolates: 4,
-  };
-  it('Capturando informações da api', async function () {
-    const response = await chai.request(app).get('/chocolates/total');
+// describe('Contando a quantidade de chocolates', function () { 
+//   const mockresponse = {
+//     totalChocolates: 4,
+//   };
+//   it('Capturando informações da api', async function () {
+//     const response = await chai.request(app).get('/chocolates/total');
 
-    expect(response.status).to.be.equal(200);
-    expect(response.body.totalChocolates).to.be.equal(4);
-    expect(response.body).to.deep.equal(mockresponse);
+//     expect(response.status).to.be.equal(200);
+//     expect(response.body.totalChocolates).to.be.equal(4);
+//     expect(response.body).to.deep.equal(mockresponse);
+//   });
+//  });
+
+describe('Pesquisando por chocolates especificos', function () {
+  const array = [
+    {
+      id: 3,
+      name: 'Mon Chéri',
+      brandId: 2,
+    },
+    {
+      id: 4,
+      name: 'Mounds',
+      brandId: 3,
+    },
+  ];
+  it('Pesquisa de chocolates', async function () {
+      const response = await chai.request(app).get('/chocolates/search?name=Mo');
+
+      expect(response.body.array).to.deep.equal(array);
+      expect(response.status).to.be.equal(200);
   });
- });
+  it('Response 404', async function () {
+    const response = await chai.request(app).get('/chocolates/search?name=ZZZ');
+
+    expect(response.status).to.be.equal(404);
+  });
+});
