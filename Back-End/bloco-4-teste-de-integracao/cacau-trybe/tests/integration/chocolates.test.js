@@ -4,6 +4,8 @@ const chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
 
+const app = require('../../src/app');
+
 const { expect } = chai;
 
 describe('Usando o método GET em /chocolates', function () {
@@ -15,7 +17,7 @@ describe('Usando o método GET em /chocolates', function () {
       { id: 4, name: 'Mounds', brandId: 3 },
     ];
     
-    const response = await chai.request('app').get('/chocolates');
+    const response = await chai.request(app).get('/chocolates');
 
     expect(response.status).to.be.equals(200);
     expect(response.body.chocolates).to.deep.equal(output);
