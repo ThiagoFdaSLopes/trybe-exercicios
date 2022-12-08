@@ -30,13 +30,24 @@ app.get('/chocolates', async (req, res) => {
 //   res.status(200).json({ totalChocolates: total });
 // });
 
-app.get('/chocolates/search', async (req, res) => {
-  const { name } = req.query;
-  const array = await cacauTrybe.searchChocolate(name);
+// app.get('/chocolates/search', async (req, res) => {
+//   const { name } = req.query;
+//   const array = await cacauTrybe.searchChocolate(name);
 
-  if (!array.length) return res.status(404).json({ array });
+//   if (!array.length) return res.status(404).json({ array });
 
-  res.status(200).json({ array });
+//   res.status(200).json({ array });
+// });
+
+app.put('/chocolate/:id', async (req, res) => {
+  const { id } = req.params;
+  const { name, brandId } = req.body;
+
+  const teste = await cacauTrybe.writeFile(id, name, brandId);
+
+  if (teste !== 'Ok') return res.status(404).json({ message: 'Chocolate not found' });
+
+  res.status(200).json(teste);
 });
 
 module.exports = app;

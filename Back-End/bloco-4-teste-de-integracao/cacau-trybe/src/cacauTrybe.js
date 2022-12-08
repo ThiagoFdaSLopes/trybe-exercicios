@@ -1,8 +1,9 @@
 const fs = require('fs').promises;
 const { join } = require('path');
 
+const path = '/files/cacauTrybeFile.json';
+
 const readCacauTrybeFile = async () => {
-  const path = '/files/cacauTrybeFile.json';
   try {
     const contentFile = await fs.readFile(join(__dirname, path), 'utf-8');
     return JSON.parse(contentFile);
@@ -39,10 +40,21 @@ const searchChocolate = async (name) => {
   return found;
 };
 
+const writeFile = async (id, name, brandId) => {
+  const cacauTrybe = await readCacauTrybeFile();
+  const chocolate = cacauTrybe.chocolates.find((e) => e.id === Number(id));
+
+  chocolate.name = name;
+  chocolate.brandId = brandId;
+
+  await fs.writeFile('./cacauTrybeFile.json', JSON.stringify(cacauTrybe, null, 2));
+};
+
 module.exports = {
-    getAllChocolates,
-    getChocolateById,
-    getChocolatesByBrand,
-    calculateTotal,
-    searchChocolate,
+  getAllChocolates,
+  getChocolateById,
+  getChocolatesByBrand,
+  calculateTotal,
+  searchChocolate,
+  writeFile,
 };

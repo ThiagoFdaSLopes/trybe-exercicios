@@ -140,28 +140,34 @@ const { expect } = chai;
 //   });
 //  });
 
-describe('Pesquisando por chocolates especificos', function () {
-  const array = [
-    {
-      id: 3,
-      name: 'Mon Chéri',
-      brandId: 2,
-    },
-    {
-      id: 4,
-      name: 'Mounds',
-      brandId: 3,
-    },
-  ];
-  it('Pesquisa de chocolates', async function () {
-      const response = await chai.request(app).get('/chocolates/search?name=Mo');
+// describe('Pesquisando por chocolates especificos', function () {
+//   const array = [
+//     {
+//       id: 3,
+//       name: 'Mon Chéri',
+//       brandId: 2,
+//     },
+//     {
+//       id: 4,
+//       name: 'Mounds',
+//       brandId: 3,
+//     },
+//   ];
+//   it('Pesquisa de chocolates', async function () {
+//       const response = await chai.request(app).get('/chocolates/search?name=Mo');
 
-      expect(response.body.array).to.deep.equal(array);
-      expect(response.status).to.be.equal(200);
-  });
-  it('Response 404', async function () {
-    const response = await chai.request(app).get('/chocolates/search?name=ZZZ');
+//       expect(response.body.array).to.deep.equal(array);
+//       expect(response.status).to.be.equal(200);
+//   });
+//   it('Response 404', async function () {
+//     const response = await chai.request(app).get('/chocolates/search?name=ZZZ');
 
-    expect(response.status).to.be.equal(404);
-  });
-});
+//     expect(response.status).to.be.equal(404);
+//   });
+// });
+
+// describe('Pesquisando por chocolates especificos', function () {
+//   it('Testando metodo PUT', async function () {
+
+//   });
+// });
