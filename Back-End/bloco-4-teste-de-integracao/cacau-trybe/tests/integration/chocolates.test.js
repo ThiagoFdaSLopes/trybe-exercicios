@@ -105,24 +105,37 @@ const { expect } = chai;
 //   });
 // });
 
-describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId 1', function () {
-  it('Retorna os chocolates da marca Lindt & Sprungli', async function () {
-    const response = await chai
-      .request(app)
-      .get('/chocolates/brand/1');
+// describe('Usando o método GET em /chocolates/brand/:brandId para buscar brandId 1', function () {
+//   it('Retorna os chocolates da marca Lindt & Sprungli', async function () {
+//     const response = await chai
+//       .request(app)
+//       .get('/chocolates/brand/1');
+
+//     expect(response.status).to.be.equal(200);
+//     expect(response.body.chocolates).to.deep.equal([
+//       {
+//         id: 1,
+//         name: 'Mint Intense',
+//         brandId: 1,
+//       },
+//       {
+//         id: 2,
+//         name: 'White Coconut',
+//         brandId: 1,
+//       },
+//     ]);
+//   });
+// });
+
+describe('Contando a quantidade de chocolates', function () { 
+  const mockresponse = {
+    totalChocolates: 4,
+  };
+  it('Capturando informações da api', async function () {
+    const response = await chai.request(app).get('/chocolates/total');
 
     expect(response.status).to.be.equal(200);
-    expect(response.body.chocolates).to.deep.equal([
-      {
-        id: 1,
-        name: 'Mint Intense',
-        brandId: 1,
-      },
-      {
-        id: 2,
-        name: 'White Coconut',
-        brandId: 1,
-      },
-    ]);
+    expect(response.body.totalChocolates).to.be.equal(4);
+    expect(response.body).to.deep.equal(mockresponse);
   });
-});
+ });
