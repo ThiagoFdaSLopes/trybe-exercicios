@@ -44,10 +44,14 @@ const writeFile = async (id, name, brandId) => {
   const cacauTrybe = await readCacauTrybeFile();
   const chocolate = cacauTrybe.chocolates.find((e) => e.id === Number(id));
 
+  if (!chocolate) return null;
+
   chocolate.name = name;
   chocolate.brandId = brandId;
 
-  await fs.writeFile('./cacauTrybeFile.json', JSON.stringify(cacauTrybe, null, 2));
+  await fs.writeFile(join(__dirname, path), JSON.stringify(cacauTrybe, null, 2));
+
+  return chocolate;
 };
 
 module.exports = {

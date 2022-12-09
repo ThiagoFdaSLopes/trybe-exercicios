@@ -45,7 +45,7 @@ app.put('/chocolate/:id', async (req, res) => {
 
   const teste = await cacauTrybe.writeFile(id, name, brandId);
 
-  if (teste !== 'Ok') return res.status(404).json({ message: 'Chocolate not found' });
+  if (teste === null) return res.status(404).json({ message: 'Chocolate not found' });
 
   res.status(200).json(teste);
 });
