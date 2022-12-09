@@ -15,7 +15,7 @@ app.get('/movies/:id', (req, res) => {
   const movie = json.find((e) => e.id === Number(id));
 
   if (!movie) {
-    res.status(400).json({ error: 'ID não encontrado' });
+    return res.status(400).json({ error: 'ID não encontrado' });
   }
 
   res.status(200).json({ movie });
@@ -36,7 +36,7 @@ app.put('/movies/:id', (req, res) => {
   const film = json.find((e) => e.id === Number(id));
 
   if (!film) {
-    res.status(400).json({ error: 'ID não encontrado' });
+    return res.status(400).json({ error: 'ID não encontrado' });
   }
 
   film.movie = movie;
@@ -49,21 +49,22 @@ app.delete('/movies/:id', (req, res) => {
   const { id } = req.params;
 
   const film = json.findIndex((e) => e.id === Number(id));
-  json.splice(film, 1);
-
+  
   if (!film) {
-    res.status(400).json({ error: 'ID não encontrado' });
+    return res.status(400).json({ error: 'ID não encontrado' });
   }
+
+  json.splice(film, 1);
 
   res.status(200).json({ message: 'Filme Deletado' });
 });
 
-// app.get('/movies/search', (req, res) => {
-//   const { q } = req.query;
+app.get('/film/search', (req, res) => {
+  const { q } = req.query;
 
-//   const movies = json.filter((e) => e.movie.includes(q));
+  const movies = json.filter((e) => e.movie.includes(q));
 
-//   res.status(200).json({ movies });
-// });
+  res.status(200).json({ movies });
+});
 
 module.exports = app;
