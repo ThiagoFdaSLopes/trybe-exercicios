@@ -8,6 +8,16 @@ const teams = [
   { id: 2, nome: 'Sociedade Esportiva Palmeiras', sigla: 'PAL' },
 ];
 
+// Middleware
+const validateTeam = (req, res, next) => {
+  const requiredProperties = ['nome', 'sigla'];
+  if (requiredProperties.every((property) => property in req.body)) {
+    next(); // Chama o próximo middleware
+  } else {
+    res.sendStatus(400); // Ou já responde avisando que deu errado
+  }
+};
+
 app.use(express.json());
 
 app.get('/teams', (req, res) => res.json(teams));
@@ -22,23 +32,17 @@ app.get('/teams/:id', (req, res) => {
   }
 });
 
-app.post('/teams', (req, res) => {
-  const requiredProperties = ['nome', 'sigla'];
-  if (requiredProperties.every((property) => property in req.body)) {
+app.post('/teams', validateTeam, (req, res) => {
     const team = { id: nextId, ...req.body };
     teams.push(team);
     nextId += 1;
     res.status(201).json(team);
-  } else {
-    res.sendStatus(400);
-  }
 });
 
-app.put('/teams/:id', (req, res) => {
+app.put('/teams/:id', validateTeam, (req, res) => {
   const id = Number(req.params.id);
-  const requiredProperties = ['nome', 'sigla'];
   const team = teams.find(t => t.id === id);
-  if (team && requiredProperties.every((property) => property in req.body)) {
+  if (team) {
     const index = teams.indexOf(team);
     const updated = { id, ...req.body };
     teams.splice(index, 1, updated);
