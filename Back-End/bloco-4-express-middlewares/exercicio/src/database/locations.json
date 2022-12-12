@@ -16,5 +16,14 @@
       "difficulty": "Médio",
       "createdAt": "12/10/2022"
     }
+  },
+  {
+    "name": "Fernando de Noronha",
+    "price": 100,
+    "description": {
+      "rating": 5,
+      "difficulty": "Fácil",
+      "createdAt": "12/10/2022"
+    }
   }
 ]
