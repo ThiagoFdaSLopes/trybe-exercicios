@@ -23,10 +23,18 @@ app.get('/teams/:id', existingId, (req, res) => {
 });
 
 app.post('/teams', validateTeam, (req, res) => {
-    const team = { id: nextId, ...req.body };
-    teams.push(team);
-    nextId += 1;
-    res.status(201).json(team);
+  if (
+    // confere se a sigla proposta está inclusa nos times autorizados
+    !req.teams.teams.includes(req.body.sigla)
+    // confere se já não existe um time com essa sigla
+    && teams.every((t) => t.sigla !== req.body.sigla)
+  ) {
+    return res.sendStatus(401);
+  }
+  const team = { id: nextId, ...req.body };
+  teams.push(team);
+  nextId += 1;
+  res.status(201).json(team);
 });
 
 app.put('/teams/:id', existingId, validateTeam, (req, res) => {
