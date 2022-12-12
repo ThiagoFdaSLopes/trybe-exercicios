@@ -34,4 +34,8 @@ router.post('/activities',
   res.status(400).json({ message: 'Localização já existe no bando de dados' });
 });
 
+router.post('/signup', (req, res) => {
+  
+});
+
 module.exports = router;
