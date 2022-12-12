@@ -1,0 +1,9 @@
+{
+  "name": "Teste",
+  "price": 3,
+  "description": {
+    "rating": 2,
+    "difficulty": "Médio",
+    "createdAt": "12/10/2022"
+  }
+}
