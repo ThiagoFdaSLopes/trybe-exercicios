@@ -8,4 +8,4 @@ const checkName = (req, res, next) => {
   next();
 };
 
-export default checkName;
+module.exports = checkName;

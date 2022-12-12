@@ -7,4 +7,4 @@ const checkDifficulty = (req, res, next) => {
   }
   next();
 };
-export default checkDifficulty;
+module.exports = checkDifficulty;

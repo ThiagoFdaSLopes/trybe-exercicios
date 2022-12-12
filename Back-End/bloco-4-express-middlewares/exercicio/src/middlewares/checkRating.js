@@ -8,4 +8,4 @@ const checkRating = (req, res, next) => {
   }
 };
 
-export default checkRating;
+module.exports = checkRating;
