@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Teste",
+    "price": 3,
+    "description": {
+      "rating": 2,
+      "difficulty": "Médio",
+      "createdAt": "12/10/2022"
+    }
+  },
+  {
+    "name": "Thiago",
+    "price": 3,
+    "description": {
+      "rating": 2,
+      "difficulty": "Médio",
+      "createdAt": "12/10/2022"
+    }
+  },
+  {
+    "name": "Fernando de Noronha",
+    "price": 100,
+    "description": {
+      "rating": 5,
+      "difficulty": "Fácil",
+      "createdAt": "12/10/2022"
+    }
+  },
+  {
+    "name": "Outro",
+    "price": 2,
+    "description": {
+      "rating": 5,
+      "difficulty": "Fácil",
+      "createdAt": "10/08/2022"
+    }
+  },
+  {
+    "name": "Criou",
+    "price": 2,
+    "description": {
+      "rating": 5,
+      "difficulty": "Fácil",
+      "createdAt": "10/08/2022"
+    }
+  }
+]
