@@ -44,7 +44,6 @@ router.get('/:id', async (req, res) => {
 
 router.get('/name/:name', async (req, res) => {
   const { name } = req.params;
-  console.log(name);
   try {
     const [[result]] = await peopleDB.findByName(name);
     if(result) {
