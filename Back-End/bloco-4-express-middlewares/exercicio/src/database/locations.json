@@ -25,5 +25,23 @@
       "difficulty": "Fácil",
       "createdAt": "12/10/2022"
     }
+  },
+  {
+    "name": "Outro",
+    "price": 2,
+    "description": {
+      "rating": 5,
+      "difficulty": "Fácil",
+      "createdAt": "10/08/2022"
+    }
+  },
+  {
+    "name": "Criou",
+    "price": 2,
+    "description": {
+      "rating": 5,
+      "difficulty": "Fácil",
+      "createdAt": "10/08/2022"
+    }
   }
 ]
