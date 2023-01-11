@@ -20,6 +20,7 @@ router.post('/', async (req, res) => {
 router.get('/', async (_req, res) => {
   try {
     const [result] = await peopleDB.findAll();
+    console.log(result);
     res.status(200).json(result);
   } catch (err) {
     console.log(err);
@@ -30,7 +31,8 @@ router.get('/', async (_req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const [[result]] = await peopleDB.findById(id);
+    const [result] = await peopleDB.findById(id);
+    console.log(result);
     if (result) {
       res.status(200).json(result);
     } else {
