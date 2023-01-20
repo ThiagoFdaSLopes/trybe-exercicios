@@ -1,0 +1,29 @@
+-- A CAMADA SERVICE
+
+Na camada service, fazemos o que chamamos de REGRA DE NEGOCIO, sabemos que as aplicacoes possuem complexidades e essas complexidades podem influenciar justamente
+na camada service, onde ira ficar as regras para que a aplicacao funcione.
+
+Nessa camada temos a seguinte estrutura, lembrando que ela vai depender da forma como voce se organiza:
+
+- service
+  - validations
+    - schemas.js 
+    - validadores.js 
+
+
+
+por exemplo:
+- Validar se as informacoes que vao ser enviadas para a camada Model estao corretas.
+- Validar se as informacoes de retorno da camada model estao conforme desejadas.
+
+const validateId = async (id) => {
+  const { error } =  schema.validateId(id)
+  if(error.type) return { type: error.type, message: "Motivo do Erro" }
+
+  const [result] = await model.findById(id)
+
+  return {type: "", message: result }
+}
+
+Observe que a responsabilidade da arrow function acima, e apenas validar a informacao que esta vindo do controller e pedir para a model
+buscar a informacao que foi solicitada, que ira buscar toda a informacao do usuario com o id informado.

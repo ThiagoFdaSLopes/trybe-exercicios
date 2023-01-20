@@ -1,0 +1,16 @@
+-- A CAMADA MODEL
+
+A camada model e usada para fazer a comunicacao com o banco de dados ou leitura e escrita de arquivos, essa camada vai conter
+as querys para fazer requisicoes ao banco de dados. Exemplo:
+
+const findById = async (id) => {
+  const [result] = await connection.execute(
+    "SELECT * FROM tabela WHERE id = ?",
+    [id]
+  );
+
+  return result;
+}
+
+Observe que a responsabilidade da arrow function acima, e apenas ir ao banco de dados e buscar a informacao que foi solicitada, que e 
+buscar a informacao toda a informacao do usuario com o id informado.
