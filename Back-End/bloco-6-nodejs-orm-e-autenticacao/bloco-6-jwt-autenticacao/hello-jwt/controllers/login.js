@@ -14,10 +14,11 @@ const validateBody = (body) =>
     }),
   }).validate(body);
 
-module.exports = (req, res, next) => {
-  const { username, password } = req.body;
-
-  if(!validateBody(username, password)) return res.status(404).json({ message: ' Invalid username or password '});
-
-
-};
+  module.exports = async (req, res, next) => {
+    /* Construímos um schema do Joi */
+    const { error } = validateBody(req.body);
+  
+    /* Caso ocorra erro na validação do Joi, passamos esse */
+    /* erro para o express, que chamará nosso middleware de erro */
+    if (error) return next(error);
+  };
