@@ -1,4 +1,7 @@
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
+
+const { JWT_SECRET } = process.env;
 
 const validateBody = (body) =>
   /* Utilizamos o Joi para validar o schema do body */
@@ -21,4 +24,15 @@ const validateBody = (body) =>
     /* Caso ocorra erro na validação do Joi, passamos esse */
     /* erro para o express, que chamará nosso middleware de erro */
     if (error) return next(error);
+
+    const payload = {
+      username: req.body.username,
+      admin: false,
+    };
+    
+    const token = jwt.sign(payload, JWT_SECRET, {
+      expiresIn: '1h',
+    });
+    
+    res.status(200).json({ token });
   };
