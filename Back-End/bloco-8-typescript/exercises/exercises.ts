@@ -24,3 +24,7 @@ export function triangleCheck(sideA: number, sideB: number, sideC: number): bool
 export function getDiamondArea(sideLarger: number, sideSmaller: number): number {
   return (sideLarger * sideSmaller) / 2;
 }
+
+export function getTrapezeArea(Blarger: number, bSmaller: number, heigth: number): number {
+  return ((Blarger + bSmaller) * heigth) / 2;
+}
