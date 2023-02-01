@@ -28,3 +28,7 @@ export function getDiamondArea(sideLarger: number, sideSmaller: number): number 
 export function getTrapezeArea(Blarger: number, bSmaller: number, heigth: number): number {
   return ((Blarger + bSmaller) * heigth) / 2;
 }
+
+export function getCircleArea(r: number): number {
+  return Math.PI * (r ** 2);
+}
