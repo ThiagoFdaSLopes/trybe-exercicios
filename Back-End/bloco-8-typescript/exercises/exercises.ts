@@ -5,3 +5,7 @@ export function getSquareArea(side: number): number {
 export function getRectangleArea(heigth: number, width: number): number {
   return heigth * width;
 };
+
+export function getTriangleArea(heigth: number, width: number): number {
+  return (heigth * width) / 2;
+};
