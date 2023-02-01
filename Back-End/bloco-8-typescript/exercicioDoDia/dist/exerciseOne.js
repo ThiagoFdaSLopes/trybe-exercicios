@@ -12,7 +12,7 @@
 //   ? console.log(`${numberInput} é primo`)
 //   : console.log(`${numberInput} não é primo`);
 // DEPOIS 
-const numberInput = 1;
+const numberInput = 7;
 const isItAPrime = (param) => {
     for (let i = 2; i < param; i++)
         if (param % i === 0) {
