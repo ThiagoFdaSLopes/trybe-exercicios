@@ -18,6 +18,14 @@ console.log(`- Losango de Diagonal Maior 32cm e Diagonal Menor 18cm: ${Ex.getDia
 console.log(`- Losango de Diagonal Maior 200cm e Diagonal Menor 50cm: ${Ex.getDiamondArea(200, 50)}cm²`);
 console.log(`- Losango de Diagonal Maior 75cm e Diagonal Menor 25cm: ${Ex.getDiamondArea(75, 25)}cm²`);
 
+// Calcule a área de um trapézio que tem B = 100cm, b = 70cm e altura = 50cm;
+// Calcule a área de um trapézio que tem B = 75cm, b = 50cm e altura = 35cm;
+// Calcule a área de um trapézio que tem B = 150cm, b = 120cm e altura = 80cm.
+
+console.log(`- Trapézio que tem B = 100cm, b = 70cm e altura = 50cm: ${Ex.getTrapezeArea(100, 70, 50)}cm²`);
+console.log(`- Trapézio que tem B = 75cm, b = 50cm e altura = 35cm: ${Ex.getTrapezeArea(75, 50, 35)}cm²`);
+console.log(`- Trapézio que tem B = 150cm, b = 120cm e altura = 80cm: ${Ex.getTrapezeArea(150, 120, 80)}cm²`);
+
 console.log("\nO PERÍMETRO DE UM:");
 
 console.log(`- Quadrado de lado 10cm: ${Ex.getPolygonPerimeter([10, 10, 10, 10])}cm`);
