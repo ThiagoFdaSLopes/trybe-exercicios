@@ -20,3 +20,7 @@ export function triangleCheck(sideA: number, sideB: number, sideC: number): bool
   const checkSideC = (sideA - sideB) < sideC && sideC < (sideA + sideB);
   return checkSideA && checkSideB && checkSideC;
 }
+
+export function getDiamondArea(sideLarger: number, sideSmaller: number): number {
+  return (sideLarger * sideSmaller) / 2;
+}
