@@ -12,5 +12,10 @@ export default class PostService {
   async getAll(): Promise<IPost[]> {
     const posts = await this.postModel.getAll();
     return posts;
-  }
+  };
+
+  async getById(id: number): Promise<IPost> {
+    const post = await this.postModel.getById(id);
+    return post;
+  };
 }
