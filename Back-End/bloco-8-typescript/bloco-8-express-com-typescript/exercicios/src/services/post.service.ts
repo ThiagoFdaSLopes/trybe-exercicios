@@ -18,4 +18,8 @@ export default class PostService {
     const post = await this.postModel.getById(id);
     return post;
   };
+
+  // async create(post: IPost): Promise<IPost> {
+  //   const 
+  // }
 }
