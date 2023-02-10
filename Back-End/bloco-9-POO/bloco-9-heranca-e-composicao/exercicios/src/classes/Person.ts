@@ -1,4 +1,5 @@
-export default class Person {
+import IPerson from '../interfaces/IPerson'
+export default class Person implements IPerson {
 
   constructor(private _name: string, private _birthDate: Date) {}
 
