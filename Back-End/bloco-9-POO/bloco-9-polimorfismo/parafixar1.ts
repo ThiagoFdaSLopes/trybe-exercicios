@@ -2,6 +2,10 @@ abstract class character {
   constructor(private name: string) {}
   abstract talk(): void
   abstract specialMove(): void
+  static create(char: character): void {
+    char.talk();
+    char.specialMove();
+  }
 }
 
 class MeleeCharacter extends character {
@@ -31,3 +35,7 @@ class LongRangeCharacter extends character {
     console.log(`Voce causou a destruicao com seu poder ${this._specialName}`)
   }
 }
+
+const yoshi = new MeleeCharacter('Yoshi', 'Super Dragon');
+
+character.create(yoshi)
