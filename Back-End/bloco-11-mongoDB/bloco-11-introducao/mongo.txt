@@ -1,0 +1,5 @@
+Baixando imagem mongo do docker: 
+docker pull mongo:VERSAO
+
+Instalando Mongo via Docker:
+docker run --name <nome-do-container> -d -p 27017:27017 mongo:4
