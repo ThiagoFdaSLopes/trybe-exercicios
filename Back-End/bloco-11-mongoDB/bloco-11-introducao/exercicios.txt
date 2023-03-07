@@ -1,0 +1,29 @@
+Exercício 1: Retorne o documento com o _id igual a 8.
+Resposta: db.bios.find({ _id: 8})
+
+Exercício 2: Retorne o documento com o _id igual a 8, mas só exiba os atributos: _id e name.
+Resposta:  db.bios.find({ _id: 8}, {_id: true, name: true})
+
+🚀 Exercício 3: Retorne apenas os atributos name e birth do documento com o _id igual a 8.
+Resposta: db.bios.find({ _id: 8}, {_id: false, name: true, birth: true})
+
+Exercício 4: Retorne todos os documentos em que o atributo name.first seja igual a John, utilizando o método pretty().
+Resposta: db.bios.find({"name.first": "John"}).pretty()
+
+Exercício 5: Retorne os 3 primeiros documentos da coleção bios utilizando o método pretty().
+Resposta: db.bios.find().limit(3).pretty();
+
+Exercício 6: Retorne 2 documentos da coleção bios pulando os 5 primeiros documentos.
+Resposta: db.bios.find().limit(2).skip(5)
+
+🚀 Exercício 7: Retorne a quantidade de documentos da coleção books.
+Resposta: db.books.countDocuments({})
+
+🚀 Exercício 8: Conte quantos livros existem com o status = "PUBLISH".
+Resposta: db.books.countDocuments({"status": "PUBLISH"})
+
+🚀 Exercício 9: Exiba os atributos title, isbn e pageCount dos 3 primeiros livros. NÃO retorne o atributo _id.
+Resposta:  db.books.find({}, {title: 1, isbn: 1, pageCount: 1, _id: 0}).limit(3).pretty()
+
+Exercício 10: Pule 5 documentos e exiba os atributos _id, title, authors e status dos livros com o status = "MEAP", limitando-se a 10 documentos.
+Resposta: db.books.find({"status": "MEAP"}, {_id: 1, title: 1, authors: 1, status: 1}).skip(5).limit(10).pretty()
