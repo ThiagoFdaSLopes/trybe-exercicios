@@ -18,3 +18,8 @@ Resposta: db.superheroes.find({ "aspects.eyeColor": { $eq: "green"}}).pretty()
 
 8 - Retorne o total de super-heróis com olhos azuis ("blue").
 Resposta: db.superheroes.find({"aspects.eyeColor": "blue"})
+
+9 - Utilizando o operador $in, selecione todos os super-heróis com cabelos pretos ("black") ou carecas ("no hair").
+Resposta: db.superheroes.find(
+    { "aspects.hairColor": { $in: ["black", "no hair"] } }
+).pretty();
