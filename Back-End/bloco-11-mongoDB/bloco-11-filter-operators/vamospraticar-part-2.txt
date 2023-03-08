@@ -17,4 +17,14 @@ Respostas:
  - db.restaurants.countDocuments({ $and: [ { rating: { $ne: 1} } , { cuisine: { $ne: "American"}}]})
  - db.restaurants.countDocuments({ $nor: [{ rating: { $eq: 1 } }, { cuisine: "American" }] });
 
- 5 - 
+ 5 - Selecione e faça a contagem dos restaurantes que satisfaçam ambas as condições a seguir:
+
+- A avaliação seja maior que 6 OU menor que 10.
+- Estejam localizados no bairro Brooklyn OU não possuam culinária do tipo Delicatessen.
+
+Resposta: db.restaurants.countDocuments({
+    $and: [
+      { $or: [{ rating: { $gt: 6, $lt: 10 } }] },
+      { $or: [{ borough: 'Brooklyn' }, { cuisine: { $ne: 'Delicatessen' } }] },
+    ],
+  });
