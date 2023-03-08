@@ -16,3 +16,5 @@ Resposta: db.superheroes.countDocuments({ "aspects.height": { $gte: 200 } })
 7 - Selecione todos os super-heróis que têm olhos verdes ("green").
 Resposta: db.superheroes.find({ "aspects.eyeColor": { $eq: "green"}}).pretty()
 
+8 - Retorne o total de super-heróis com olhos azuis ("blue").
+Resposta: db.superheroes.find({"aspects.eyeColor": "blue"})
