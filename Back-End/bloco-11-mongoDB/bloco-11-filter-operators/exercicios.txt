@@ -23,3 +23,6 @@ Resposta: db.superheroes.find({"aspects.eyeColor": "blue"})
 Resposta: db.superheroes.find(
     { "aspects.hairColor": { $in: ["black", "no hair"] } }
 ).pretty();
+
+10 - Retorne o total de super-heróis com cabelos pretos ("black") ou carecas ("no hair").
+Resposta: db.superheroes.countDocuments({ "aspects.hairColor": { $in: ["black", "no hair"] } })
