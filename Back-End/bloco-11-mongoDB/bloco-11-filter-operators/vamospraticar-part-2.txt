@@ -12,4 +12,9 @@ Resposta: db.restaurants.countDocuments({
     ],
   });
 
-4 - 
+4 - Selecione e faça a contagem dos restaurantes onde nem o campo avaliação seja igual a 1, nem o campo culinária seja do tipo American.
+Respostas:
+ - db.restaurants.countDocuments({ $and: [ { rating: { $ne: 1} } , { cuisine: { $ne: "American"}}]})
+ - db.restaurants.countDocuments({ $nor: [{ rating: { $eq: 1 } }, { cuisine: "American" }] });
+
+ 5 - 
