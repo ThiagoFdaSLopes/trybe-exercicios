@@ -66,3 +66,23 @@ Resposta: db.superheroes.find(
         ]
     }
 ).pretty();
+
+16 - Retorne o total de documentos que não contém o campo race.
+Resposta: db.superheroes.countDocuments(
+    { race: { $exists: false } }
+);
+
+17 - Retorne o total de documentos que contém o campo hairColor.
+Resposta: db.superheroes.countDocuments(
+    { "aspects.hairColor": { $exists: true } }
+);
+
+18 - Remova apenas um documento publicado pela Sony Pictures.
+Resposta: db.superheroes.deleteOne(
+    { publisher: "Sony Pictures" }
+);
+
+19 - Remova todos os documentos publicados pelo George Lucas.
+Resposta: db.superheroes.deleteMany(
+    { publisher: "George Lucas" }
+);
