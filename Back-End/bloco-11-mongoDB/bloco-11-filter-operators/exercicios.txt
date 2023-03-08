@@ -6,3 +6,6 @@ Resposta: db.superheroes.countDocuments({ "aspects.height": { $lt: 180} })
 
 4 - Retorne o total de super-heróis com até 1.80m.
 Resposta: db.superheroes.countDocuments({ "aspects.height": { $lte: 180} })
+
+5 - Selecione um super-herói com 2.00m ou mais de altura.
+Resposta: db.superheroes.findOne({ "aspects.height": { $gte: 200 }})
