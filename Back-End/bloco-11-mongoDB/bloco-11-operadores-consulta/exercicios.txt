@@ -21,3 +21,6 @@ Resposta: db.movies.find({ category: { $size: 2} }, { _id: 0, title: 1})
 
 8 - 🚀 Retorne somente o título de todos os filmes com quatro elementos no array ratings.
 Resposta: db.movies.find({ ratings: { $size: 4}}, { _id: 0, title: 1})
+
+9 - Busque os filmes em que o módulo 5 do campo budget seja 0 e que o array category tenha tamanho 2.
+Resposta: db.movies.find({ budget: { $mod: [5, 0]}, category: { $size: 2}})
