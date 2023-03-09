@@ -18,3 +18,6 @@ Resposta: db.movies.find({ category: { $all: ["adventure"]}, ratings: { $elemMat
 
 7 - Retorne somente o título de todos os filmes com dois elementos no array category.
 Resposta: db.movies.find({ category: { $size: 2} }, { _id: 0, title: 1})
+
+8 - 🚀 Retorne somente o título de todos os filmes com quatro elementos no array ratings.
+Resposta: db.movies.find({ ratings: { $size: 4}}, { _id: 0, title: 1})
