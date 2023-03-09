@@ -12,3 +12,6 @@ Resposta: db.movies.find({ ratings: { $elemMatch: { $gte: 100, $lte: 105 }}}, {_
 
 5 - Retorne todos os filmes onde ao menos um elemento de ratings esteja entre 64 e 105 e seja divisível por 9, exiba apenas os campos title e ratings.
 Resposta: db.movies.find({ ratings: { $elemMatch: { $gte: 64, $lte: 105, $mod: [9, 0]}}})
+
+6 - Retorne os filmes da categoria adventure e com ratings maior do que 103, exibindo apenas os campos title, ratings e category.
+Resposta: db.movies.find({ category: { $all: ["adventure"]}, ratings: { $elemMatch: { $gt: 103}}}, { _id: 0, title: 1, ratings: 1, category: 1})
