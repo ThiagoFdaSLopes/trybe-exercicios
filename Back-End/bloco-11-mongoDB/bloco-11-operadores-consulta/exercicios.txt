@@ -15,3 +15,6 @@ Resposta: db.movies.find({ ratings: { $elemMatch: { $gte: 64, $lte: 105, $mod: [
 
 6 - Retorne os filmes da categoria adventure e com ratings maior do que 103, exibindo apenas os campos title, ratings e category.
 Resposta: db.movies.find({ category: { $all: ["adventure"]}, ratings: { $elemMatch: { $gt: 103}}}, { _id: 0, title: 1, ratings: 1, category: 1})
+
+7 - Retorne somente o título de todos os filmes com dois elementos no array category.
+Resposta: db.movies.find({ category: { $size: 2} }, { _id: 0, title: 1})
