@@ -1,2 +1,5 @@
 1 - Utilizando o operador $all, retorne todos os filmes que contenham action e adventure no array category.
 Resposta: db.movies.find({ category: { $all: ["action", "adventure"]}})
+
+2 - 🚀 Agora retorne os filmes que contenham action e sci-fi no array category e possuem nota do IMDB maior do que 7.
+Resposta: db.movies.find({ $and: [ { category: { $all: ["action", "sci-fi"]}}, { imdbRating: { $gte: 7}} ]})
