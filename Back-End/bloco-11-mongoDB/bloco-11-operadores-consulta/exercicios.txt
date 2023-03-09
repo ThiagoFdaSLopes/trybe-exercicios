@@ -40,3 +40,6 @@ Resposta: db.movies.find({ description: { $regex: /^The/}})
 
 13 - Utilizando o operador $regex, retorne todos os filmes em que a descrição termine com a palavra "humanity.".
 Resposta: db.movies.find({ description: { $regex: /humanity.$/i}})
+
+14 - Utilizando o operador $expr, retorne todos os filmes em que o budget seja menor do que o grossWorldwide.
+Resposta: db.movies.find({ $expr: { $lt: ["$budget", "$grossWorldwide"]}})
