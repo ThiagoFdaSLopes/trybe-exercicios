@@ -6,3 +6,6 @@ Resposta: db.movies.find({ $and: [ { category: { $all: ["action", "sci-fi"]}}, {
 
 3 - Retorne todos os filmes com ratings maior do que 103, exibindo apenas os campos title e ratings.
 Resposta: db.movies.find({ ratings: { $elemMatch: { $gt: 103}}}, {_id: 0,  title: 1, ratings: 1})
+
+4 - Retorne todos os filmes com ratings entre 100 e 105, exibindo apenas os campos title e ratings.
+Resposta: db.movies.find({ ratings: { $elemMatch: { $gte: 100, $lte: 105 }}}, {_id: 0,  title: 1, ratings: 1})
