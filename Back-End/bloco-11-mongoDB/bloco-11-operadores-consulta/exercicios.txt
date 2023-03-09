@@ -34,3 +34,6 @@ Resposta: db.movies.find({ $and: [
   { category: { $in: ["adventure", "family"] } },
   { imdbRating: { $not: { $lt: 7 } }}
 ]});
+
+12 - 🚀 Utilizando o operador $regex, retorne todos os filmes em que a descrição comece com a palavra "The".
+Resposta: db.movies.find({ description: { $regex: /^The/}})
