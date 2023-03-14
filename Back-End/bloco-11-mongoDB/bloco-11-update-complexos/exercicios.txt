@@ -20,14 +20,27 @@ Resposta: db.movies.updateOne({title: "Batman"}, { $addToSet: { category: "actio
 Resposta: db.movies.updateMany({ title: { $in: ["Batman", "Home Alone"]}}, { $push: { category: "90's"}})
 
 8 - Crie um array de documentos chamado cast para o filme Home Alone com os seguintes dados
-Resposta: db.movies.updateOne({ title: "Home Alone"}, { $addToSet: { cast: {
-  "actor": "Macaulay Culkin",
-  "character": "Kevin"
-},
-{
-  "actor": "Joe Pesci",
-  "character": "Harry"
-},
-{
-  "actor": "Daniel Stern"
-}}})
+Resposta: db.movies.updateOne(
+  { title: "Home Alone" },
+  {
+    $push: {
+      cast: {
+        $each: [
+          {
+            "actor": "Macaulay Culkin",
+            "character": "Kevin",
+          },
+          {
+            "actor": "Joe Pesci",
+            "character": "Harry",
+          },
+          {
+            "actor": "Daniel Stern",
+          },
+        ],
+      },
+    },
+  },
+);
+
+9 - Adicione o campo character com o valor Marv ao array de cast em que o campo actor seja igual a Daniel Stern no filme Home Alone.
