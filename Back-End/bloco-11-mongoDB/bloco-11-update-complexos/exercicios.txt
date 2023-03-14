@@ -3,3 +3,6 @@ Resposta: db.movies.updateOne({ title: "Batman"}, {$push: { category: "superhero
 
 2 - Utilizando o modificador $each, adicione as categorias "villain" e "comic-based" ao filme Batman
 Resposta: db.movies.updateOne({ title: "Batman"}, { $push: { category: { $each: [ "villain", "comic-based"]}}})
+
+3 - Remova a categoria "action" do filme Batman.
+Resposta: db.movies.updateOne({ title: "Batman"}, { $pull: { category: "action"}})
