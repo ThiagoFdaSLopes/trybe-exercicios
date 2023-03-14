@@ -15,3 +15,6 @@ Resposta: db.movies.updateOne({ title: "Batman"}, { $pop: { category: 1}})
 
 6 - Adicione o elemento "action" ao array category do filme Batman, garantindo que esse valor não se duplique.
 Resposta: db.movies.updateOne({title: "Batman"}, { $addToSet: { category: "action"}})
+
+7 - Adicione a categoria "90's" aos filmes Batman e Home Alone.
+Resposta: db.movies.updateMany({ title: { $in: ["Batman", "Home Alone"]}}, { $push: { category: "90's"}})
