@@ -1,0 +1,2 @@
+1 -  Adicione a categoria "superhero" ao filme Batman.
+Resposta: db.movies.updateOne({ title: "Batman"}, {$push: { category: "superhero"}})
