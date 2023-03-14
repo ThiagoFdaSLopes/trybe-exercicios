@@ -12,3 +12,6 @@ Resposta: db.movies.updateOne({ title: "Batman"}, { $pop: { category: -1}})
 
 5 - Remova o último elemento do array category do filme Batman.
 Resposta: db.movies.updateOne({ title: "Batman"}, { $pop: { category: 1}})
+
+6 - Adicione o elemento "action" ao array category do filme Batman, garantindo que esse valor não se duplique.
+Resposta: db.movies.updateOne({title: "Batman"}, { $addToSet: { category: "action"}})
