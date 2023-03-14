@@ -9,3 +9,6 @@ Resposta: db.movies.updateOne({ title: "Batman"}, { $pull: { category: "action"}
 
 4 - Remova o primeiro elemento do array category do filme Batman.
 Resposta: db.movies.updateOne({ title: "Batman"}, { $pop: { category: -1}})
+
+5 - Remova o último elemento do array category do filme Batman.
+Resposta: db.movies.updateOne({ title: "Batman"}, { $pop: { category: 1}})
