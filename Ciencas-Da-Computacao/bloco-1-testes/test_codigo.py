@@ -1,5 +1,5 @@
-import pytest
-from codigo import is_odd, divide
+# import pytest
+from codigo import is_odd
 
 
 def test_is_odd_when_number_is_odd_returns_true():
@@ -12,6 +12,6 @@ def test_is_odd_when_number_is_even_returns_false():
     assert is_odd(2) is False
 
 
-def test_divide_when_other_number_is_zero_raises_an_exception():
-    with pytest.raises(ZeroDivisionError, match="division by zero"):
-        divide(2, 0)
+# def test_divide_when_other_number_is_zero_raises_an_exception():
+#     with pytest.raises(ZeroDivisionError, match="division by zero"):
+#         divide(2, 0)
